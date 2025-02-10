@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>การตรวจสอบรหัสผ่าน</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .message {
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>กรุณากรอกรหัสผ่าน</h2>
+        <input type="password" id="password" placeholder="กรอกรหัสผ่าน" />
+        <button onclick="checkPassword()">ตรวจสอบ</button>
+        <div id="message" class="message"></div>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const messageDiv = document.getElementById('message');
+
+            if (password === 'ABCD1234') {
+                messageDiv.textContent = 'Correct';
+                messageDiv.className = 'message correct';
+            } else {
+                messageDiv.textContent = 'Incorrect';
+                messageDiv.className = 'message incorrect';
+            }
+        }
+    </script>
+</body>
+</html>
